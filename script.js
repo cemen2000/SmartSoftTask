@@ -94,7 +94,16 @@ document.getElementById('order-form').addEventListener('submit', function(event)
         confirmButtonText: 'OK'
     });
 });
-
+    
+function createReview(name, review) {
+    const reviewElement = document.createElement('div');
+    reviewElement.classList.add('review');
+    reviewElement.innerHTML = `
+        <i class="fas fa-circle"></i>
+        <h3>${name}</h3>
+        <p>${review}</p>`;
+    return reviewElement;
+}
 fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json') 
     .then(response => response.json())
     .then(data => {

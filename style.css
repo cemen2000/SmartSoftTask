@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+form label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+input, textarea {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    margin: 0; 
+     vertical-align: middle;
+}
+
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#reviews {
+    margin-top: 20px;
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.review {
+    flex-basis: calc(33.33% - 20px);
+    padding: 1px;
+    text-align: center;
+}
+
+.review h3 {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.review p {
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+}
+
+@media (max-width: 768px) {
+    .review {
+        flex-basis: 100%;
+    }
+}
+ 

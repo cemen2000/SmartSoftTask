@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Форма 1 -->
+    <section id="form1">
+        <h2 style="text-align: center;">Тестовое Задание СмартСофт</h2>
+        <form id="contact-form">
+            <input type="text" minlength="3" id="name" placeholder="Имя" required>
+            <input type="email" id="email" placeholder="Почта" required>
+            <input type="text" id="second name" placeholder="Фамилия">
+            <input type="text" id="message" placeholder="Сообщение"  required>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+    <!-- Форма 2 -->
+     <section id="form2">
+        <form id="order-form">
+            <h3>Информация о заказе</h3>
+            <h5 style="margin-top: -8px;">Мы доставим за 2 дня</h5>
+            <label>
+                Полное имя
+            </label>
+            <input type="text" id="customer-name" placeholder="Имя" required>
+            <label>
+                Адрес доставки
+            </label>
+            <input type="text" id="delivery-address" placeholder="Адрес" required>
+            <label>
+                Комментарий к заказу
+            </label>
+            <input type="text" id="comment" placeholder="Комментарий" required>
+            <label>
+              <input type="checkbox" id="terms" required> Принять условия договора-оферты
+            </label>
+            <button type="submit">Создать заказ</button>
+        </form>
+    </section>
+    <!-- Отзывы -->
+    <section id="reviews">
+      <form id="order-form">
+          <h3>Отзывы</h3>
+         <label>
+         <p>Полезные отзывы наших клиентов</p>
+         </label>
+         <div class="review-container"></div>
+       </form>
+   </section>
+</body>
+</html>

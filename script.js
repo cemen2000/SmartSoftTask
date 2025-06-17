@@ -129,3 +129,4 @@ fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json')
     .catch(error => {
         console.error('Ошибка загрузки отзывов:', error);
     });
+})

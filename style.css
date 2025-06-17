@@ -21,19 +21,6 @@ form {
   padding: 20px;
 }
 
-#review-form {
-  width: 50%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border-radius: 8px;
-  border: 1px solid #ffffff00;
-  border-radius: 4px;
-  padding: 20px;
-}
-
-
 label {
     display: flex;
     margin: -5px 0;
@@ -96,6 +83,18 @@ button:hover {
     margin: 0; /* Убираем отступы заголовков */
 }
 
+    #review-form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #ffffff00;
+  border-radius: 4px;
+  padding: 20px;
+}
+    
 .review-container {
     display: flex;
     flex-wrap: wrap;

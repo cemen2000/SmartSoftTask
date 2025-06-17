@@ -61,14 +61,6 @@ document.getElementById('order-form').addEventListener('submit', function(event)
         confirmButtonText: 'OK'
     });
 });
-const reviewsData = [
-    { name: "Алексей", review: "Отличное качество продукта! " },
-    { name: "Мария", review: "Быстрая доставка и приятный сервис." },
-    { name: "Дмитрий", review: "Рекомендую всем!" },
-    { name: "Елена", review: "Хорошее соотношение цены и качества." },
-    { name: "Иван", review: "Продукция соответствует описанию." },
-    { name: "Ольга", review: "Заказ выполнен точно в срок." }
-];
 
 fetch('reviews.json') 
     .then(response => response.json())

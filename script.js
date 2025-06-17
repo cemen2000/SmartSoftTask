@@ -114,7 +114,7 @@ fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json')
     })
     .then(data => {
         console.log('Данные из JSON:', data);
-        const reviewContainer = document.querySelector('.review-container');
+        const reviewContainer = document.querySelector('review-container');
         if (!reviewContainer) {
             console.error('Контейнер для отзывов не найден!');
             return;

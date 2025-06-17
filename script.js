@@ -95,7 +95,7 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     });
 });
 
-fetch('reviews.json') 
+fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json') 
     .then(response => response.json())
     .then(data => {
         data.forEach(item => {

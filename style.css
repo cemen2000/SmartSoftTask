@@ -7,7 +7,6 @@ body {
 section {
     padding: 20px;
     margin: 20px;
-    border-radius: 8px;
 }
 
 form {
@@ -16,26 +15,54 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+}
 
+#review-form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+  border: 1px solid #ffffff00;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+
+label {
+    display: flex;
+    margin: -5px 0;
+    align-items: center;
+    gap: 12px;
 }
 
 form label {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
 }
-input, textarea {
+input{
+    display: flex;
+    resize: none;
     padding: 10px;
-    margin: 5px 0;
+    margin: 1px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
-input[type="checkbox"] {
-    margin: 0; 
-     vertical-align: middle;
+textarea {
+    display: flex;
+    resize: none;
+    height: 60px;
+    padding: 10px;
+    margin: 1px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
-
 
 button {
     padding: 10px;
@@ -60,22 +87,37 @@ button:hover {
     gap: 20px;
 }
 
-.review {
-    flex-basis: calc(33.33% - 20px);
-    padding: 1px;
-    text-align: center;
+#form1 h2 {
+font-size: auto;
 }
 
-.review h3 {
+#review-form h3 {
+    margin-top: -5px;
+    margin-bottom: -25px
+}
+
+#order-form h3 {
+    margin-top: -5px;
+    margin-bottom: -25px
+}
+
+#order-form h5 {
+ color: #999999;
+}
+
+#reviews h3 {
     text-align: left;
     font-size: 18px;
-    margin-bottom: 10px;
 }
 
-.review p {
-    text-align: left;
-    font-size: 14px;
-    color: #666;
+#reviews h5 {
+    margin-top: 25px;
+    color: #999999;
+}
+
+#order-form button {
+margin-top: 5;
+
 }
 
 @media (max-width: 768px) {

@@ -101,12 +101,13 @@ function createReview(name, review) {
     reviewElement.innerHTML = `
         <i class="fas fa-circle"></i>
         <h3>${name}</h3>
-        <p>${review}</p>`;
+        <p>${review}</p>
+    `;
     return reviewElement;
 }
 
 fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json') 
-    .then(response => {Add commentMore actions
+    .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP ошибка: ${response.status}`);
         }
@@ -114,7 +115,7 @@ fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json')
     })
     .then(data => {
         console.log('Данные из JSON:', data);
-        const reviewContainer = document.querySelector('review-container');
+        const reviewContainer = document.querySelector('.review-container'); 
         if (!reviewContainer) {
             console.error('Контейнер для отзывов не найден!');
             return;

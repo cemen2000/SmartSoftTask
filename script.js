@@ -131,8 +131,8 @@ function displayReviews(reviews) {
 }
 
 // Главная функция
-async function init() {
-  const reviews = await loadReviews();
+function init() {
+  const reviews = loadReviews();
   displayReviews(reviews);
 }
 

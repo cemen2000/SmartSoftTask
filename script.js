@@ -99,7 +99,6 @@ function createReview(name, review) {
     const reviewElement = document.createElement('div');
     reviewElement.classList.add('review');
     reviewElement.innerHTML = `
-        <i class="fas fa-circle"></i>
         <div>
             <h3>${name}</h3>
             <p>${review}</p>

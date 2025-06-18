@@ -68,6 +68,10 @@ button:hover {
     margin-top: 20px;
 }
 
+#reviews {
+    margin-top: 20px;
+}
+
 .review-container {
     display: flex;
     flex-wrap: wrap;
@@ -75,12 +79,22 @@ button:hover {
 }
 
 .review {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
+    flex-basis: calc(33.33% - 20px);
+    padding: 1px;
+    text-align: center;
 }
 
+.review h3 {
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.review p {
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+}
 .review h4 {
     margin: 0;
     font-size: 16px;

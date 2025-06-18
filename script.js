@@ -111,10 +111,6 @@ function displayReviews(reviews) {
     const reviewElement = document.createElement('div');
     reviewElement.classList.add('review');
       
-    const icon = document.createElement('div');
-    icon.classList.add('review-icon');
-    icon.textContent = index + 1;
-      
     const title = document.createElement('h3');
     title.classList.add('name');
     title.textContent = review.title;
@@ -123,9 +119,8 @@ function displayReviews(reviews) {
     body.classList.add('review');
     body.textContent = review.body;
       
-    reviewElement.appendChild(icon);
     reviewElement.appendChild(title);
-    reviewElement.appendChild(body);
+    reviewElement.appendChild(review);
     reviewsContainer.appendChild(reviewElement);
   });
 }

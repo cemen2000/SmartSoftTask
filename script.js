@@ -138,3 +138,4 @@ async function init() {
 
 // Запускаем при загрузке страницы
 document.addEventListener('DOMContentLoaded', init);
+})

@@ -68,16 +68,21 @@ button:hover {
     margin-top: 20px;
 }
 
+#review.form h5 {
+ color: #999999;
+ margin-top: -8px; 
+}
+
 .review-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; 
+    gap: 5px; 
     margin-top: 40px; 
 }
 
 .review {
     flex-basis: calc(33.33% - 20px); 
-    padding: 10px;
+    padding: 1px;
     background-color: #f9f9f9;
 }
 
@@ -113,7 +118,7 @@ button:hover {
 .review-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
 }
 
 #form1 h2 {

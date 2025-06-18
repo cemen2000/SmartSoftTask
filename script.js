@@ -95,36 +95,14 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     });
 });
     
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json') 
-        .then(response => response.json())
-        .then(data => {
-            const reviewContainer = document.querySelector('.review-container');
-            if (!reviewContainer) {
-                console.error('Контейнер для отзывов не найден!');
-                return;
-            }
-
-            data.forEach(item => {
-                const reviewElement = createReview(item.name, item.review);
-                reviewContainer.appendChild(reviewElement);
-            });
-        })
-        .catch(error => {
-            console.error('Ошибка загрузки отзывов:', error);
+fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json') 
+    .then(response => response.json())
+    .then(data => {
+        data.forEach(item => {
+            const reviewElement = createReview(item.name, item.review);
+            reviewContainer.appendChild(reviewElement);
         });
-});
-
-function createReview(name, review) {
-    const reviewElement = document.createElement('div');
-    reviewElement.classList.add('review');
-    reviewElement.innerHTML = `
-        <i class="fas fa-circle"></i>
-        <div>
-            <h3>${name}</h3>
-            <p>${review}</p>
-        </div>
-    `;
-    return reviewElement;
-}
-})
+    })
+    .catch(error => {
+        console.error('Ошибка загрузки отзывов:', error);
+    });

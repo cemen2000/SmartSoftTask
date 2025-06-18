@@ -95,14 +95,44 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     });
 });
     
-fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json') 
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(item => {
-            const reviewElement = createReview(item.name, item.review);
-            reviewContainer.appendChild(reviewElement);
-        });
-    })
-    .catch(error => {
-        console.error('Ошибка загрузки отзывов:', error);
-    });
+// Функция для отображения отзывов на странице
+function displayReviews(reviews) {
+  const reviewsContainer = document.getElementById('reviews');
+
+  reviews.forEach((review, index) => {
+    const reviewElement = document.createElement('div');
+    reviewElement.classList.add('review');
+
+    // Иконка отзыва
+    const icon = document.createElement('div');
+    icon.classList.add('review-icon');
+    icon.textContent = index + 1;
+
+    // Заголовок отзыва
+    const title = document.createElement('h3');
+    title.classList.add('review-title');
+    title.textContent = review.title;
+
+    // Текст отзыва
+    const body = document.createElement('p');
+    body.classList.add('review-body');
+    body.textContent = review.body;
+
+    // Добавляем элементы в отзыв
+    reviewElement.appendChild(icon);
+    reviewElement.appendChild(title);
+    reviewElement.appendChild(body);
+
+    // Добавляем отзыв в контейнер
+    reviewsContainer.appendChild(reviewElement);
+  });
+}
+
+// Главная функция
+async function init() {
+  const reviews = await loadReviews();
+  displayReviews(reviews);
+}
+
+// Запускаем при загрузке страницы
+document.addEventListener('DOMContentLoaded', init);

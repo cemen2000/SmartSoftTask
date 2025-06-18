@@ -98,15 +98,20 @@ document.getElementById('order-form').addEventListener('submit', function(event)
 function createReview(name, review) {
     const reviewElement = document.createElement('div');
     reviewElement.classList.add('review');
-    reviewElement.innerHTML = `
-        <i class="fas fa-circle"></i>
-        <h3>${name}</h3>
-        <p>${review}</p>
-    `;
+
+    const nameElement = document.createElement('h4');
+    nameElement.textContent = name;
+
+    const reviewTextElement = document.createElement('p');
+    reviewTextElement.textContent = review;
+
+    reviewElement.appendChild(nameElement);
+    reviewElement.appendChild(reviewTextElement);
+
     return reviewElement;
 }
 
-fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json') 
+fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json')
     .then(response => {
         if (!response.ok) {
             throw new Error(`HTTP ошибка: ${response.status}`);
@@ -115,7 +120,7 @@ fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json')
     })
     .then(data => {
         console.log('Данные из JSON:', data);
-        const reviewContainer = document.querySelector('.review-container'); 
+        const reviewContainer = document.querySelector('.review-container');
         if (!reviewContainer) {
             console.error('Контейнер для отзывов не найден!');
             return;
@@ -129,4 +134,3 @@ fetch('https://cemen2000.github.io/SmartSoftTask/reviews.json')
     .catch(error => {
         console.error('Ошибка загрузки отзывов:', error);
     });
-})

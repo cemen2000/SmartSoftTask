@@ -94,36 +94,38 @@ document.getElementById('order-form').addEventListener('submit', function(event)
         confirmButtonText: 'OK'
     });
 });
-    
-// Функция для отображения отзывов на странице
+async function loadReviews() {
+  try {
+    const response = await fetch('https://github.com/cemen2000/SmartSoftTask/blob/main/reviews.json'); 
+    const reviews = await response.json();
+    return reviews;
+  } catch (error) {
+    console.error('Ошибка при загрузке отзывов:', error);
+    return [];
+  }
+}
 function displayReviews(reviews) {
   const reviewsContainer = document.getElementById('reviews');
 
   reviews.forEach((review, index) => {
     const reviewElement = document.createElement('div');
     reviewElement.classList.add('review');
-
-    // Иконка отзыва
+      
     const icon = document.createElement('div');
     icon.classList.add('review-icon');
     icon.textContent = index + 1;
-
-    // Заголовок отзыва
+      
     const title = document.createElement('h3');
     title.classList.add('review-title');
     title.textContent = review.title;
-
-    // Текст отзыва
+      
     const body = document.createElement('p');
     body.classList.add('review-body');
     body.textContent = review.body;
-
-    // Добавляем элементы в отзыв
+      
     reviewElement.appendChild(icon);
     reviewElement.appendChild(title);
     reviewElement.appendChild(body);
-
-    // Добавляем отзыв в контейнер
     reviewsContainer.appendChild(reviewElement);
   });
 }

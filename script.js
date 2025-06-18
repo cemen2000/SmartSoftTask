@@ -87,9 +87,7 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     }
     Swal.fire({
         title: 'Создание заказа',
-        text: `Имя: ${customername}<br>
-        Адресс доставки: ${address},<br>
-        Комментарий к заказу: ${comment}`,
+        text: `Имя: ${customername} Адресс доставки: ${address}, Комментарий к заказу: ${comment}`,
         icon: 'success',
         confirmButtonText: 'OK'
     });

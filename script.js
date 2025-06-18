@@ -113,14 +113,14 @@ function displayReviews(reviews) {
       
     const title = document.createElement('h3');
     title.classList.add('name');
-    title.textContent = review.title;
+    title.textContent = review.name;
       
     const body = document.createElement('p');
     body.classList.add('review');
-    body.textContent = review.body;
+    body.textContent = review.review;
       
     reviewElement.appendChild(title);
-    reviewElement.appendChild(review);
+    reviewElement.appendChild(body);
     reviewsContainer.appendChild(reviewElement);
   });
 }

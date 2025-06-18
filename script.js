@@ -96,7 +96,7 @@ document.getElementById('order-form').addEventListener('submit', function(event)
 });
 async function loadReviews() {
   try {
-    const response = await fetch('https://github.com/cemen2000/SmartSoftTask/blob/main/reviews.json'); 
+    const response = await fetch('reviews.json'); 
     const reviews = await response.json();
     return reviews;
   } catch (error) {

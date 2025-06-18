@@ -10,7 +10,7 @@ section {
 }
 
 form {
-  width: 50%;
+  width: 65%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@ button:hover {
 }
 
 #review-form {
-  width: 50%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -116,6 +116,7 @@ button:hover {
 }
     
 .review-container {
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;

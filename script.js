@@ -95,42 +95,26 @@ document.getElementById('order-form').addEventListener('submit', function(event)
     });
 });
 
-async function loadReviews() {
-  try {
-    const response = await fetch('reviews.json'); 
-    const reviews = await response.json();
-    return reviews;
-  } catch (error) {
-    console.error('Ошибка при загрузке отзывов:', error);
-    return [];
-  }
-}
-function displayReviews(reviews) {
-  const reviewsContainer = document.getElementById('reviews');
+fetch('reviews.json') 
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP ошибка: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Данные из JSON:', data); 
+        const reviewContainer = document.querySelector('.review-container');
+        if (!reviewContainer) {
+            console.error('Контейнер для отзывов не найден!');
+            return;
+        }
 
-  reviews.forEach((review, index) => {
-    const reviewElement = document.createElement('div');
-    reviewElement.classList.add('review');
-
-    const title = document.createElement('h3');
-    title.classList.add('name');
-    title.textContent = review.name;
-      
-    const body = document.createElement('p');
-    body.classList.add('review');
-    body.textContent = review.review;
-      
-    reviewElement.appendChild(title);
-    reviewElement.appendChild(body);
-    reviewsContainer.appendChild(reviewElement);
-  });
-}
-
-// Главная функция
-async function init() {
-  const reviews = await loadReviews();
-  displayReviews(reviews);
-}
-
-// Запускаем при загрузке страницы
-document.addEventListener('DOMContentLoaded', init);
+        data.forEach(item => {
+            const reviewElement = createReview(item.name, item.review);
+            reviewContainer.appendChild(reviewElement);
+        });
+    })
+    .catch(error => {
+        console.error('Ошибка загрузки отзывов:', error);
+    });

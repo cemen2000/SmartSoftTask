@@ -66,7 +66,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
         confirmButtonText: 'Понятно'
     });
 });
-
+});
 
         
 document.getElementById('order-form').addEventListener('submit', function(event) {
@@ -116,11 +116,11 @@ function displayReviews(reviews) {
     icon.textContent = index + 1;
       
     const title = document.createElement('h3');
-    title.classList.add('review-title');
+    title.classList.add('name');
     title.textContent = review.title;
       
     const body = document.createElement('p');
-    body.classList.add('review-body');
+    body.classList.add('review');
     body.textContent = review.body;
       
     reviewElement.appendChild(icon);
@@ -131,11 +131,10 @@ function displayReviews(reviews) {
 }
 
 // Главная функция
-function init() {
-  const reviews = loadReviews();
+async function init() {
+  const reviews = await loadReviews();
   displayReviews(reviews);
 }
 
 // Запускаем при загрузке страницы
 document.addEventListener('DOMContentLoaded', init);
-})

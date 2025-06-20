@@ -99,7 +99,6 @@ button:hover {
     font-size: 16px;
 }
 
-}
 .review h4 {
     margin: 0;
     font-size: 16px;
@@ -129,14 +128,8 @@ button:hover {
 font-size: auto;
 }
 
-#review-form h3 {
-    margin-top: 5px;
-    margin-bottom: 5px
-}
-
 #order-form h3 {
-    margin-top: -5px;
-    margin-bottom: -25px
+    margin-bottom: -20px
 }
 
 #order-form h5 {
@@ -153,4 +146,3 @@ margin-top: 5;
         flex-basis: 100%;
     }
 }
- 
